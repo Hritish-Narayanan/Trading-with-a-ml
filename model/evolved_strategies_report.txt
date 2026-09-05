@@ -1,0 +1,63 @@
+==========================================================================================
+        EVOLUTIONARY QUANTITATIVE STRATEGY DISCOVERY REPORT (NIFTY 50)
+        APPLE SILICON M1 ACCELERATED & PERSISTENT WINNER COMPETITIVE ENGINE
+==========================================================================================
+
+Hardware Platform             : Apple Silicon M1 (arm64, ARM64 NEON SIMD)
+GPU Processing Device         : Apple Silicon Metal Performance Shaders (MPS - 8 GPU Cores)
+Memory Architecture           : Unified Memory Architecture (UMA)
+Compute Engine                : PyTorch 2.14.0 Metal Performance Shaders
+Total Generations Evolved     : 5
+Total Strategies Evaluated    : 500
+All-Time Champions Tracked    : 25
+Peak Out-of-Sample Win Rate   : 76.19%
+Peak Out-of-Sample ROI        : +40.07%
+Peak Out-of-Sample Profit Fac : 2.66
+Peak Out-of-Sample Max DD     : -17.89%
+
+--- MULTI-WINNER META-ENSEMBLE PORTFOLIO ---
+Ensemble Out-of-Sample ROI    : +47.38%
+Ensemble Out-of-Sample Max DD : -17.58%
+Ensemble Active Market Time   : 94.0%
+Ensemble Champions Combined   : 5 Distinct Winners
+
+------------------------------------------------------------------------------------------
+1. TOP 5 PERSISTENT ALL-TIME CHAMPIONS (HALL OF FAME)
+------------------------------------------------------------------------------------------
+
+RANK #01 | DISCOVERED IN GENERATION 01
+  Rules        : ENTRY: [Prior Day Dip Drop > 0.6%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]
+  In-Sample    : Win Rate: 78.00% | Trades:  50 | Net ROI: +290.06% | Max DD: -38.4%
+  Out-of-Sample: Win Rate: 76.19% | Trades:  21 | Net ROI: +40.07% | Max DD: -17.9% | PF: 2.66
+
+RANK #02 | DISCOVERED IN GENERATION 01
+  Rules        : ENTRY: [Prior Day Dip Drop > 0.6%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 78]
+  In-Sample    : Win Rate: 71.64% | Trades:  67 | Net ROI: +161.28% | Max DD: -45.4%
+  Out-of-Sample: Win Rate: 75.86% | Trades:  29 | Net ROI: +37.99% | Max DD: -16.5% | PF: 2.32
+
+RANK #03 | DISCOVERED IN GENERATION 01
+  Rules        : ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]
+  In-Sample    : Win Rate: 77.78% | Trades:  45 | Net ROI: +276.17% | Max DD: -38.4%
+  Out-of-Sample: Win Rate: 77.78% | Trades:  18 | Net ROI: +36.91% | Max DD: -17.9% | PF: 2.58
+
+RANK #04 | DISCOVERED IN GENERATION 01
+  Rules        : ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 78]
+  In-Sample    : Win Rate: 70.49% | Trades:  61 | Net ROI: +181.05% | Max DD: -45.4%
+  Out-of-Sample: Win Rate: 75.00% | Trades:  24 | Net ROI: +36.46% | Max DD: -16.5% | PF: 2.39
+
+RANK #05 | DISCOVERED IN GENERATION 01
+  Rules        : ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 73]
+  In-Sample    : Win Rate: 64.34% | Trades: 244 | Net ROI: +205.50% | Max DD: -38.4%
+  Out-of-Sample: Win Rate: 63.79% | Trades: 116 | Net ROI: +34.67% | Max DD: -20.0% | PF: 1.71
+
+------------------------------------------------------------------------------------------
+2. GENERATION-BY-GENERATION EVOLUTIONARY PROGRESSION
+------------------------------------------------------------------------------------------
+Gen    | Mean Fit  | Max Fit   | In-Sample Win%  | OOS Win%   | OOS ROI%   | OOS PF   | OOS Trades
+------------------------------------------------------------------------------------------
+0001   | 8.92      | 31.08     |  67.2%          |  62.9%     |  +34.5%    | 1.99     | 70        
+0002   | 18.15     | 31.08     |  67.2%          |  62.9%     |  +34.5%    | 1.99     | 70        
+0003   | 22.94     | 31.08     |  67.2%          |  62.9%     |  +34.5%    | 1.99     | 70        
+0004   | 25.05     | 31.08     |  67.2%          |  62.9%     |  +34.5%    | 1.99     | 70        
+0005   | 25.57     | 31.08     |  67.2%          |  62.9%     |  +34.5%    | 1.99     | 70        
+==========================================================================================

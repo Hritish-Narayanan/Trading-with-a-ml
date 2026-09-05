@@ -1,0 +1,59 @@
+=====================================================================================
+     NIFTY 50 SYSTEMATIC 5-YEAR ROLLING WALK-FORWARD & SELF-CORRECTING REPORT
+=====================================================================================
+
+Total Out-of-Sample Cycles      : 27 consecutive regimes
+Total Out-of-Sample Period      : 2013-07-10 to 2026-09-03
+Total Unseen Sessions Evaluated : 3,231 trading sessions
+Overall Out-of-Sample Accuracy  : 51.66%
+Overall Majority Class Baseline : 53.61%
+Overall ROC-AUC Score           : 0.5333
+Walk-Forward Cumulative Return  : +152.89%
+Nifty 50 Buy-and-Hold Return    : +310.85%
+
+-------------------------------------------------------------------------------------
+ACCURACY FINE-TUNING VIA SIGNAL CONVICTION THRESHOLDING
+-------------------------------------------------------------------------------------
+Min Confidence     | Prob Filter     | Realized OOS Acc   | Covered Days      
+-------------------------------------------------------------------------------------
+Conviction >= 50.0%  | |P-0.5| >= 0.00 |  51.66%            | 3,231 days (100.0%)
+Conviction >= 51.0%  | |P-0.5| >= 0.01 |  52.05%            | 2,703 days (83.7%)
+Conviction >= 52.0%  | |P-0.5| >= 0.02 |  52.71%            | 2,231 days (69.0%)
+Conviction >= 53.0%  | |P-0.5| >= 0.03 |  54.08%            | 1,779 days (55.1%)
+Conviction >= 54.0%  | |P-0.5| >= 0.04 |  55.86%            | 1,425 days (44.1%)
+Conviction >= 55.0%  | |P-0.5| >= 0.05 |  55.80%            | 1,147 days (35.5%)
+Conviction >= 56.0%  | |P-0.5| >= 0.06 |  56.47%            | 919 days (28.4%)
+
+-------------------------------------------------------------------------------------
+PERIOD-BY-PERIOD ADAPTIVE SELF-CORRECTION CYCLE BREAKDOWN
+-------------------------------------------------------------------------------------
+Cycle  | Test Horizon            | Champion Architecture       | Val Acc  | OOS Acc  | Base Acc | Edge  
+-------------------------------------------------------------------------------------
+01     | 2013-07-10 to 2014-01-09 | GradientBoosting_Shallow    |  57.4%  |  47.2%  |  52.0%  |  -4.9%
+02     | 2014-01-10 to 2014-07-09 | VotingEnsemble(HGB+ET+LR)   |  59.2%  |  39.7%  |  59.5%  | -19.8%
+03     | 2014-07-10 to 2015-01-09 | ExtraTrees_Deep             |  58.0%  |  63.9%  |  58.0%  |  +5.9%
+04     | 2015-01-12 to 2015-07-09 | ExtraTrees_Deep             |  60.8%  |  49.6%  |  51.2%  |  -1.7%
+05     | 2015-07-10 to 2016-01-08 | LogisticRegression_StrongL2 |  59.0%  |  50.0%  |  54.1%  |  -4.1%
+06     | 2016-01-11 to 2016-07-08 | ExtraTrees_Regularized      |  58.0%  |  54.9%  |  56.6%  |  -1.6%
+07     | 2016-07-11 to 2017-01-09 | RandomForest_Balanced       |  58.8%  |  49.6%  |  50.4%  |  -0.8%
+08     | 2017-01-10 to 2017-07-07 | ExtraTrees_Deep             |  56.1%  |  45.9%  |  56.6%  | -10.7%
+09     | 2017-07-10 to 2018-01-09 | HistGradientBoosting        |  54.9%  |  55.6%  |  57.1%  |  -1.6%
+10     | 2018-01-10 to 2018-07-09 | GradientBoosting_Shallow    |  59.2%  |  54.5%  |  52.8%  |  +1.6%
+11     | 2018-07-10 to 2019-01-09 | HistGradientBoosting        |  58.0%  |  50.8%  |  54.1%  |  -3.3%
+12     | 2019-01-10 to 2019-07-09 | GradientBoosting_Shallow    |  56.3%  |  52.5%  |  50.8%  |  +1.7%
+13     | 2019-07-10 to 2020-01-09 | VotingEnsemble(HGB+ET+LR)   |  59.0%  |  53.3%  |  54.9%  |  -1.6%
+14     | 2020-01-10 to 2020-07-09 | GradientBoosting_Shallow    |  57.6%  |  52.5%  |  50.8%  |  +1.6%
+15     | 2020-07-10 to 2021-01-08 | GradientBoosting_Shallow    |  58.0%  |  44.9%  |  68.5%  | -23.6%
+16     | 2021-01-11 to 2021-07-09 | VotingEnsemble(HGB+ET+LR)   |  58.5%  |  54.5%  |  54.5%  |  +0.0%
+17     | 2021-07-12 to 2022-01-07 | VotingEnsemble(HGB+ET+LR)   |  62.2%  |  57.3%  |  57.3%  |  +0.0%
+18     | 2022-01-10 to 2022-07-08 | RandomForest_Balanced       |  57.5%  |  45.2%  |  58.9%  | -13.7%
+19     | 2022-07-11 to 2023-01-09 | RandomForest_Balanced       |  55.1%  |  56.8%  |  56.8%  |  +0.0%
+20     | 2023-01-10 to 2023-07-07 | HistGradientBoosting_Slow   |  56.3%  |  54.5%  |  57.0%  |  -2.5%
+21     | 2023-07-10 to 2024-01-09 | ExtraTrees_Regularized      |  60.6%  |  59.2%  |  59.2%  |  +0.0%
+22     | 2024-01-10 to 2024-07-09 | ExtraTrees_Deep             |  60.7%  |  54.2%  |  59.2%  |  -5.0%
+23     | 2024-07-10 to 2025-01-09 | VotingEnsemble(HGB+ET+LR)   |  58.7%  |  49.2%  |  50.8%  |  -1.6%
+24     | 2025-01-10 to 2025-07-09 | VotingEnsemble(HGB+ET+LR)   |  54.4%  |  48.8%  |  50.4%  |  -1.6%
+25     | 2025-07-10 to 2026-01-09 | VotingEnsemble(HGB+ET+LR)   |  58.1%  |  53.2%  |  50.8%  |  +2.4%
+26     | 2026-01-12 to 2026-07-09 | RandomForest_Balanced       |  58.1%  |  41.2%  |  52.9%  | -11.8%
+27     | 2026-07-10 to 2026-09-03 | ExtraTrees_Deep             |  53.4%  |  65.0%  |  60.0%  |  +5.0%
+=====================================================================================

@@ -1,0 +1,46 @@
+================================================================================
+            NIFTY 50 MACHINE LEARNING MODEL REPORT
+================================================================================
+
+Sampled 5-Year Interval : 2010-06-16 to 2015-06-16
+Total Trading Sessions  : 1220 bars
+5-Year Nifty Return     : +53.77%
+Champion Model Type     : RandomForest
+Best Hyperparameters    : {'model_name': 'RandomForest', 'n_estimators': 200, 'max_depth': 8, 'min_samples_split': 8, 'min_samples_leaf': 8, 'max_features': 'log2', 'random_state': 83}
+
+--------------------------------------------------------------------------------
+1. OUT-OF-SAMPLE TEST PERFORMANCE (Strictly Unseen 15% Holdout)
+--------------------------------------------------------------------------------
+Test Accuracy            : 52.54%
+Majority Class Baseline  : 50.85%
+Accuracy vs. Baseline    : +0.02%
+ROC-AUC Score            : 0.5679
+Precision (Up Days)      : 52.11%
+Recall (Up Days)         : 82.22%
+F1-Score                 : 0.6379
+
+Confusion Matrix:
+                Pred Down    Pred Up
+Actual Down     19          68          
+Actual Up       16          74          
+
+--------------------------------------------------------------------------------
+2. TOP 15 PREDICTIVE FEATURES
+--------------------------------------------------------------------------------
+01. overnight_gap                : 0.05592
+02. normalized_spread            : 0.05364
+03. ret_1d                       : 0.05306
+04. ret_3d                       : 0.05205
+05. vol_20d                      : 0.04991
+06. rsi_14                       : 0.04598
+07. vol_5d                       : 0.04328
+08. ret_2d                       : 0.04271
+09. atr_14_norm                  : 0.04061
+10. close_to_open                : 0.03972
+11. dist_sma_5                   : 0.03967
+12. macd_hist                    : 0.03883
+13. ret_21d                      : 0.03861
+14. macd                         : 0.03789
+15. macd_signal                  : 0.03775
+
+================================================================================

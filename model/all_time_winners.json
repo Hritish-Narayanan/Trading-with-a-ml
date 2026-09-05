@@ -1,0 +1,677 @@
+[
+  {
+    "rank": 1,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.6%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.006,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.78,
+      "trades": 50,
+      "roi": 290.06,
+      "max_dd": 0.3844,
+      "fitness": 23.59
+    },
+    "out_of_sample": {
+      "win_rate": 0.7619,
+      "trades": 21,
+      "roi": 40.07,
+      "max_dd": 0.1789,
+      "profit_factor": 2.66
+    }
+  },
+  {
+    "rank": 2,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.6%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 78]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.006,
+      "param_2": 0,
+      "regime_filter": "NONE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 78
+    },
+    "in_sample": {
+      "win_rate": 0.7164,
+      "trades": 67,
+      "roi": 161.28,
+      "max_dd": 0.4537,
+      "fitness": 15.15
+    },
+    "out_of_sample": {
+      "win_rate": 0.7586,
+      "trades": 29,
+      "roi": 37.99,
+      "max_dd": 0.165,
+      "profit_factor": 2.32
+    }
+  },
+  {
+    "rank": 3,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.008,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.7778,
+      "trades": 45,
+      "roi": 276.17,
+      "max_dd": 0.384,
+      "fitness": 32.5
+    },
+    "out_of_sample": {
+      "win_rate": 0.7778,
+      "trades": 18,
+      "roi": 36.91,
+      "max_dd": 0.1789,
+      "profit_factor": 2.58
+    }
+  },
+  {
+    "rank": 4,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 78]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.008,
+      "param_2": 0,
+      "regime_filter": "NONE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 78
+    },
+    "in_sample": {
+      "win_rate": 0.7049,
+      "trades": 61,
+      "roi": 181.05,
+      "max_dd": 0.4537,
+      "fitness": 14.71
+    },
+    "out_of_sample": {
+      "win_rate": 0.75,
+      "trades": 24,
+      "roi": 36.46,
+      "max_dd": 0.165,
+      "profit_factor": 2.39
+    }
+  },
+  {
+    "rank": 5,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 73]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 73
+    },
+    "in_sample": {
+      "win_rate": 0.6434,
+      "trades": 244,
+      "roi": 205.5,
+      "max_dd": 0.3844,
+      "fitness": 16.9
+    },
+    "out_of_sample": {
+      "win_rate": 0.6379,
+      "trades": 116,
+      "roi": 34.67,
+      "max_dd": 0.1996,
+      "profit_factor": 1.71
+    }
+  },
+  {
+    "rank": 6,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.6724,
+      "trades": 116,
+      "roi": 322.59,
+      "max_dd": 0.384,
+      "fitness": 31.08
+    },
+    "out_of_sample": {
+      "win_rate": 0.6286,
+      "trades": 70,
+      "roi": 34.49,
+      "max_dd": 0.1847,
+      "profit_factor": 1.99
+    }
+  },
+  {
+    "rank": 7,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Turn-of-Month Day 1 Anomaly] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 73]",
+    "genome": {
+      "entry_type": "TOM_ANOMALY",
+      "param_1": 1,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 73
+    },
+    "in_sample": {
+      "win_rate": 0.7162,
+      "trades": 74,
+      "roi": 131.35,
+      "max_dd": 0.3906,
+      "fitness": 19.29
+    },
+    "out_of_sample": {
+      "win_rate": 0.7,
+      "trades": 30,
+      "roi": 33.86,
+      "max_dd": 0.1534,
+      "profit_factor": 2.62
+    }
+  },
+  {
+    "rank": 8,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 76]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.008,
+      "param_2": 0,
+      "regime_filter": "NONE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 76
+    },
+    "in_sample": {
+      "win_rate": 0.6901,
+      "trades": 71,
+      "roi": 185.82,
+      "max_dd": 0.4537,
+      "fitness": 16.58
+    },
+    "out_of_sample": {
+      "win_rate": 0.7308,
+      "trades": 26,
+      "roi": 33.83,
+      "max_dd": 0.1992,
+      "profit_factor": 2.03
+    }
+  },
+  {
+    "rank": 9,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Take Profit at +3.5% / Stop at -4.0%]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "PROFIT_TARGET",
+      "exit_param": 0.035
+    },
+    "in_sample": {
+      "win_rate": 0.6635,
+      "trades": 104,
+      "roi": 129.75,
+      "max_dd": 0.1965,
+      "fitness": 14.46
+    },
+    "out_of_sample": {
+      "win_rate": 0.65,
+      "trades": 40,
+      "roi": 33.4,
+      "max_dd": 0.1814,
+      "profit_factor": 1.54
+    }
+  },
+  {
+    "rank": 10,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 79]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 79
+    },
+    "in_sample": {
+      "win_rate": 0.6884,
+      "trades": 138,
+      "roi": 305.52,
+      "max_dd": 0.3844,
+      "fitness": 30.3
+    },
+    "out_of_sample": {
+      "win_rate": 0.6364,
+      "trades": 77,
+      "roi": 33.25,
+      "max_dd": 0.1807,
+      "profit_factor": 1.89
+    }
+  },
+  {
+    "rank": 11,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 75]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 75
+    },
+    "in_sample": {
+      "win_rate": 0.66,
+      "trades": 200,
+      "roi": 286.04,
+      "max_dd": 0.384,
+      "fitness": 29.85
+    },
+    "out_of_sample": {
+      "win_rate": 0.6632,
+      "trades": 95,
+      "roi": 32.75,
+      "max_dd": 0.1877,
+      "profit_factor": 1.67
+    }
+  },
+  {
+    "rank": 12,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 78]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 78
+    },
+    "in_sample": {
+      "win_rate": 0.6887,
+      "trades": 151,
+      "roi": 268.67,
+      "max_dd": 0.384,
+      "fitness": 30.12
+    },
+    "out_of_sample": {
+      "win_rate": 0.6296,
+      "trades": 81,
+      "roi": 32.7,
+      "max_dd": 0.1784,
+      "profit_factor": 1.79
+    }
+  },
+  {
+    "rank": 13,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Turn-of-Month Day 1 Anomaly] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 75]",
+    "genome": {
+      "entry_type": "TOM_ANOMALY",
+      "param_1": 1,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 75
+    },
+    "in_sample": {
+      "win_rate": 0.7049,
+      "trades": 61,
+      "roi": 143.91,
+      "max_dd": 0.404,
+      "fitness": 26.5
+    },
+    "out_of_sample": {
+      "win_rate": 0.7037,
+      "trades": 27,
+      "roi": 32.55,
+      "max_dd": 0.1522,
+      "profit_factor": 2.72
+    }
+  },
+  {
+    "rank": 14,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Bollinger %B < 0.15 (Oversold Bounce)] | REGIME: [when VOL_SQUEEZE] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "BB_MEAN_REVERSION",
+      "param_1": 0.15,
+      "param_2": 0,
+      "regime_filter": "VOL_SQUEEZE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.8108,
+      "trades": 37,
+      "roi": 208.79,
+      "max_dd": 0.4396,
+      "fitness": 14.9
+    },
+    "out_of_sample": {
+      "win_rate": 0.7857,
+      "trades": 14,
+      "roi": 31.45,
+      "max_dd": 0.1765,
+      "profit_factor": 3.22
+    }
+  },
+  {
+    "rank": 15,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 76]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 76
+    },
+    "in_sample": {
+      "win_rate": 0.6413,
+      "trades": 184,
+      "roi": 269.02,
+      "max_dd": 0.3844,
+      "fitness": 23.01
+    },
+    "out_of_sample": {
+      "win_rate": 0.6444,
+      "trades": 90,
+      "roi": 30.25,
+      "max_dd": 0.1877,
+      "profit_factor": 1.62
+    }
+  },
+  {
+    "rank": 16,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 1.0%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 72]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.01,
+      "param_2": 0,
+      "regime_filter": "NONE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 72
+    },
+    "in_sample": {
+      "win_rate": 0.7125,
+      "trades": 80,
+      "roi": 146.32,
+      "max_dd": 0.4427,
+      "fitness": 14.86
+    },
+    "out_of_sample": {
+      "win_rate": 0.6538,
+      "trades": 26,
+      "roi": 27.66,
+      "max_dd": 0.1587,
+      "profit_factor": 2.01
+    }
+  },
+  {
+    "rank": 17,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 77]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 77
+    },
+    "in_sample": {
+      "win_rate": 0.6647,
+      "trades": 167,
+      "roi": 290.38,
+      "max_dd": 0.3844,
+      "fitness": 26.88
+    },
+    "out_of_sample": {
+      "win_rate": 0.631,
+      "trades": 84,
+      "roi": 26.57,
+      "max_dd": 0.1877,
+      "profit_factor": 1.57
+    }
+  },
+  {
+    "rank": 18,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [MACD Histogram Crosses Above Zero] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 71]",
+    "genome": {
+      "entry_type": "MACD_BULL_CROSS",
+      "param_1": 0,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 71
+    },
+    "in_sample": {
+      "win_rate": 0.6338,
+      "trades": 284,
+      "roi": 169.27,
+      "max_dd": 0.3859,
+      "fitness": 14.23
+    },
+    "out_of_sample": {
+      "win_rate": 0.5952,
+      "trades": 126,
+      "roi": 26.15,
+      "max_dd": 0.1938,
+      "profit_factor": 1.49
+    }
+  },
+  {
+    "rank": 19,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 1.0%] | REGIME: [No Filter] | EXIT: [Exit when RSI(14) >= 70]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.01,
+      "param_2": 0,
+      "regime_filter": "NONE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 70
+    },
+    "in_sample": {
+      "win_rate": 0.7128,
+      "trades": 94,
+      "roi": 130.31,
+      "max_dd": 0.4455,
+      "fitness": 13.46
+    },
+    "out_of_sample": {
+      "win_rate": 0.7143,
+      "trades": 28,
+      "roi": 25.24,
+      "max_dd": 0.1501,
+      "profit_factor": 2.0
+    }
+  },
+  {
+    "rank": 20,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 1.0%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 78]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.01,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 78
+    },
+    "in_sample": {
+      "win_rate": 0.7727,
+      "trades": 44,
+      "roi": 237.95,
+      "max_dd": 0.3901,
+      "fitness": 19.72
+    },
+    "out_of_sample": {
+      "win_rate": 0.7222,
+      "trades": 18,
+      "roi": 25.04,
+      "max_dd": 0.1795,
+      "profit_factor": 2.31
+    }
+  },
+  {
+    "rank": 21,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.6%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 75]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.006,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 75
+    },
+    "in_sample": {
+      "win_rate": 0.726,
+      "trades": 73,
+      "roi": 242.11,
+      "max_dd": 0.3844,
+      "fitness": 31.05
+    },
+    "out_of_sample": {
+      "win_rate": 0.6897,
+      "trades": 29,
+      "roi": 24.03,
+      "max_dd": 0.1992,
+      "profit_factor": 1.74
+    }
+  },
+  {
+    "rank": 22,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [Prior Day Dip Drop > 0.8%] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 75]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.008,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 75
+    },
+    "in_sample": {
+      "win_rate": 0.7097,
+      "trades": 62,
+      "roi": 219.43,
+      "max_dd": 0.3844,
+      "fitness": 24.57
+    },
+    "out_of_sample": {
+      "win_rate": 0.7083,
+      "trades": 24,
+      "roi": 23.08,
+      "max_dd": 0.1992,
+      "profit_factor": 1.77
+    }
+  },
+  {
+    "rank": 23,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [Prior Day Dip Drop > 1.0%] | REGIME: [when VOL_SQUEEZE] | EXIT: [Exit when RSI(14) >= 75]",
+    "genome": {
+      "entry_type": "BUY_THE_DIP",
+      "param_1": 0.01,
+      "param_2": 0,
+      "regime_filter": "VOL_SQUEEZE",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 75
+    },
+    "in_sample": {
+      "win_rate": 0.7442,
+      "trades": 43,
+      "roi": 155.69,
+      "max_dd": 0.4396,
+      "fitness": 12.97
+    },
+    "out_of_sample": {
+      "win_rate": 0.6,
+      "trades": 15,
+      "roi": 15.76,
+      "max_dd": 0.1449,
+      "profit_factor": 2.06
+    }
+  },
+  {
+    "rank": 24,
+    "gen_discovered": 2,
+    "desc": "ENTRY: [New 10-Day Price High Breakout] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "DONCHIAN_BREAKOUT",
+      "param_1": 10,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.6923,
+      "trades": 78,
+      "roi": 192.38,
+      "max_dd": 0.3844,
+      "fitness": 26.71
+    },
+    "out_of_sample": {
+      "win_rate": 0.5882,
+      "trades": 51,
+      "roi": 14.22,
+      "max_dd": 0.1941,
+      "profit_factor": 1.49
+    }
+  },
+  {
+    "rank": 25,
+    "gen_discovered": 1,
+    "desc": "ENTRY: [New 20-Day Price High Breakout] | REGIME: [when SMA_200_BULL] | EXIT: [Exit when RSI(14) >= 80]",
+    "genome": {
+      "entry_type": "DONCHIAN_BREAKOUT",
+      "param_1": 20,
+      "param_2": 0,
+      "regime_filter": "SMA_200_BULL",
+      "exit_type": "RSI_OVERBOUGHT",
+      "exit_param": 80
+    },
+    "in_sample": {
+      "win_rate": 0.6923,
+      "trades": 78,
+      "roi": 187.06,
+      "max_dd": 0.3844,
+      "fitness": 25.97
+    },
+    "out_of_sample": {
+      "win_rate": 0.58,
+      "trades": 50,
+      "roi": 9.78,
+      "max_dd": 0.2101,
+      "profit_factor": 1.35
+    }
+  }
+]
