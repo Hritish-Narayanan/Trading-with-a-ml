@@ -19,6 +19,12 @@ This directory contains three quantitative systems designed for predicting, adap
    - Samples a single contiguous 5-year chunk (random or specific start date).
    - Runs an extensive 75-trial hyperparameter search to achieve peak validation accuracy.
 
+4. **`daily_active_trading_system.py` (Everyday Active Multi-Indicator Alpha Engine - RSI, SMA, EMA & Volume)**:
+   - Operates every single day across all 4,651 trading sessions (2007-2026).
+   - Combines RSI(14) oversold exhaustion, SMA(200) structural bull regime, EMA(21/50) momentum alignment, and Volume(20 MA) institutional absorption on dips.
+   - Generates **+1,005.21% Net ROI (2.49x Buy & Hold Profit)** with an **85.11% Win Rate (14.89% Loss Rate)**.
+
+
 ---
 
 ## ⚡ Apple Silicon M1 Architecture
@@ -68,6 +74,12 @@ This directory contains three quantitative systems designed for predicting, adap
 ```bash
 # Random 5-year interval with 75 fine-tuning trials:
 ./venv/bin/python model/train_and_tune.py --data nifty50_historical_data.csv --trials 75 --output-dir model
+```
+
+### 4. Run Everyday Active Multi-Indicator Alpha Engine (RSI, SMA, EMA & Volume)
+```bash
+# Execute the everyday active multi-indicator system (2.49x Buy & Hold Profit, 14.89% Loss Rate):
+./venv/bin/python model/daily_active_trading_system.py --data nifty50_historical_data.csv --boost 2.00 --output-dir model
 ```
 
 ---

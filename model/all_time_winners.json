@@ -2,6 +2,55 @@
   {
     "rank": 1,
     "gen_discovered": 1,
+    "name": "DAILY_ACTIVE_MULTI_INDICATOR_ALPHA_2X",
+    "desc": "EVERYDAY ACTIVE MULTI-INDICATOR CONFLUENCE: Evaluates daily across all 4,651 trading days. Confluence of [Wilder RSI(14) <= 35] + [SMA 200 Structural Bull Regime] + [EMA 21/50 Trend Alignment] + [Volume 20 MA >= 0.95x Capitulation Absorption] + [Prior Day Dip <= -0.9%]. Allocation: 1.0x Core Index + 2.0x Tactical Overlay Boost. EXIT: [Take Profit at +1.0% or 10-day Max Hold].",
+    "genome": {
+      "entry_type": "MULTI_INDICATOR_CONFLUENCE",
+      "indicators": ["RSI_14", "SMA_200", "EMA_21_50", "VOLUME_20MA"],
+      "rsi_threshold": 35.0,
+      "sma_regime": 200,
+      "ema_fast": 21,
+      "ema_slow": 50,
+      "vol_ratio": 0.95,
+      "dip_pct": 0.009,
+      "allocation_mode": "DAILY_ACTIVE_DYNAMIC_OVERLAY",
+      "boost": 2.0,
+      "exit_type": "PROFIT_TARGET_OR_HOLD",
+      "exit_param": 0.010,
+      "max_hold_days": 10
+    },
+    "in_sample": {
+      "win_rate": 0.8485,
+      "loss_rate": 0.1515,
+      "trades": 33,
+      "roi": 367.16,
+      "max_dd": 0.5793
+    },
+    "out_of_sample": {
+      "win_rate": 0.8571,
+      "loss_rate": 0.1429,
+      "trades": 14,
+      "roi": 136.58,
+      "max_dd": 0.2241
+    },
+    "overall": {
+      "total_trades": 47,
+      "winning_trades": 40,
+      "losing_trades": 7,
+      "win_rate": 0.8511,
+      "loss_rate": 0.1489,
+      "total_roi": 1005.21,
+      "nifty_bnh_roi": 403.37,
+      "profit_multiplier": 2.49,
+      "cagr": 13.79,
+      "nifty_cagr": 9.08,
+      "daily_rebalances": 94,
+      "trading_sessions": 4651
+    }
+  },
+  {
+    "rank": 2,
+    "gen_discovered": 1,
     "name": "ULTRA_CONVICTION_TACTICAL_ALPHA_2X",
     "desc": "ENTRY: [Dip Drop >= 1.0% & Wilder RSI(14) < 35] | REGIME: [when SMA_200_BULL] | ALLOCATION: [1.0x Core Index + 1.0x Boost] | EXIT: [Take Profit at +1.2%]",
     "genome": {
