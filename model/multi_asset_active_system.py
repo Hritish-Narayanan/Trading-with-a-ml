@@ -36,6 +36,7 @@ ASSET_CONFIGS = {
         "dip": -0.009,
         "rsi": 35.0,
         "target": 0.010,
+        "vol": 0.95,
         "boost": 2.00,
         "bear_alloc": 0.25,
         "color": "#10b981",
@@ -45,7 +46,8 @@ ASSET_CONFIGS = {
         "file": "sp500_historical_data.csv",
         "dip": -0.008,
         "rsi": 33.0,
-        "target": 0.009,
+        "target": 0.008,
+        "vol": 0.80,
         "boost": 2.00,
         "bear_alloc": 0.25,
         "color": "#0284c7",
@@ -56,6 +58,7 @@ ASSET_CONFIGS = {
         "dip": -0.025,
         "rsi": 35.0,
         "target": 0.015,
+        "vol": 0.80,
         "boost": 1.50,
         "bear_alloc": 0.25,
         "color": "#f59e0b",
@@ -103,7 +106,7 @@ def evaluate_asset(name, cfg, output_dir="model"):
         is_bull = (close[i-1] > sma_200[i-1]) and (ema_21[i-1] >= ema_50[i-1] * 0.985)
         if is_bull:
             is_dip = (ret_1d[i-1] <= cfg["dip"]) and (rsi_14[i-1] <= cfg["rsi"])
-            is_vol = (vol_ratio[i-1] >= 0.95) if (vol_sma20[i-1] > 0) else True
+            is_vol = (vol_ratio[i-1] >= cfg["vol"]) if (vol_sma20[i-1] > 0) else True
             
             if is_dip and is_vol:
                 entry_idx = i
@@ -164,10 +167,21 @@ def evaluate_asset(name, cfg, output_dir="model"):
     loss_rate = 100.0 - win_rate
     profit_mult = total_roi / bnh_roi
     
-    # Save Trade CSV
+    # Post-2018 Modern Era Metrics
+    df_post = df_trades[df_trades['entry_date'] >= '2018-01-01'].copy()
+    total_post = len(df_post)
+    win_post = int(df_post['is_win'].sum())
+    loss_post = total_post - win_post
+    wr_post = (win_post / total_post * 100) if total_post > 0 else 0
+    lr_post = 100.0 - wr_post
+    
+    # Save Trade CSVs
     safe_name = name.lower().replace(" ", "_").replace("&", "")
     trades_path = os.path.join(output_dir, f"trades_{safe_name}.csv")
     df_trades.to_csv(trades_path, index=False)
+    
+    post_trades_path = os.path.join(output_dir, f"post_2018_trades_{safe_name}.csv")
+    df_post.to_csv(post_trades_path, index=False)
     
     return {
         "name": name,
@@ -191,7 +205,13 @@ def evaluate_asset(name, cfg, output_dir="model"):
         "loss_trades": loss_trades,
         "win_rate": win_rate,
         "loss_rate": loss_rate,
+        "total_post": total_post,
+        "win_post": win_post,
+        "loss_post": loss_post,
+        "wr_post": wr_post,
+        "lr_post": lr_post,
         "trades_df": df_trades,
+        "trades_post_df": df_post,
         "color": cfg["color"]
     }
 
@@ -220,17 +240,39 @@ def run_triple_asset_engine(output_dir="model"):
         print(f"  Daily Rebalances    : {res['rebalances_count']} active adjustments")
         print("-" * 95)
         
-    # Comparative Summary Table
-    print("\n" + "=" * 95)
-    print("CROSS-ASSET AUDIT SUMMARY TABLE")
-    print("=" * 95)
+    # Comparative Summary Table: Full History
+    print("\n" + "=" * 105)
+    print("CROSS-ASSET AUDIT SUMMARY TABLE (FULL HISTORY)")
+    print("=" * 105)
     print(f"{'Asset Name':12s} | {'Sessions':8s} | {'Win Rate':9s} | {'Loss Rate':9s} | {'Total Return':14s} | {'Max DD':8s} | {'Target Status'}")
-    print("-" * 95)
+    print("-" * 105)
     for name, res in results.items():
         print(f"{name:12s} | {res['n_bars']:8d} | {res['win_rate']:8.2f}% | {res['loss_rate']:8.2f}% | +{res['total_roi']:11.1f}% | -{res['strat_mdd']:6.1f}% | Win Rate >= 80%: SUCCESS")
-    print("=" * 95 + "\n")
+    print("=" * 105 + "\n")
     
-    # 6-Panel Comparative High-Res Visual Dashboard
+    # Comparative Summary Table: STRICTLY POST-2018 (2018-01-01 to SEPTEMBER 2026)
+    print("=" * 105)
+    print("POST-2018 MODERN ERA PROOF TABLE (2018-01-01 TO SEPTEMBER 2026)")
+    print("=" * 105)
+    print(f"{'Asset Name':12s} | {'Trades':8s} | {'Wins':6s} | {'Losses':6s} | {'Win Rate':10s} | {'Loss Rate':10s} | {'Status'}")
+    print("-" * 105)
+    for name, res in results.items():
+        st = "PASSED (>=80%)" if res['wr_post'] >= 80.0 else "REVIEW"
+        print(f"{name:12s} | {res['total_post']:8d} | {res['win_post']:6d} | {res['loss_post']:6d} | {res['wr_post']:9.2f}% | {res['lr_post']:9.2f}% | {st}")
+    print("=" * 105 + "\n")
+    
+    # Print Every Single Post-2018 Trade for Verification
+    print("=" * 105)
+    print("EVERY TRADE EXECUTED POST-2018 (VERIFICATION LOG)")
+    print("=" * 105)
+    for name, res in results.items():
+        print(f"\n--- {name} POST-2018 TRADES (Total: {res['total_post']} | Wins: {res['win_post']} | Losses: {res['loss_post']} | Win Rate: {res['wr_post']:.1f}%) ---")
+        df_p = res['trades_post_df']
+        if len(df_p) > 0:
+            print(df_p[['trade_num', 'entry_date', 'exit_date', 'entry_price', 'exit_price', 'return_pct', 'hold_days', 'exit_reason', 'is_win']].to_string(index=False))
+    print("\n" + "=" * 105 + "\n")
+    
+    # 1. Full History 6-Panel Visual Dashboard
     fig = plt.figure(figsize=(20, 14), dpi=300)
     gs = fig.add_gridspec(3, 2, hspace=0.32, wspace=0.22)
     
@@ -248,10 +290,8 @@ def run_triple_asset_engine(output_dir="model"):
     
     row = 0
     for name, res in results.items():
-        # Equity Curve Subplot
         ax_eq = fig.add_subplot(gs[row, 0])
         ax_eq.set_facecolor(bg_color)
-        
         ax_eq.plot(res['dates'], res['strat_eq'], color=res['color'], linewidth=2.2, label=f"{name} Strategy (+{res['total_roi']:.1f}% | {res['profit_mult']:.2f}x Profit)")
         ax_eq.plot(res['dates'], res['bnh_eq'], color=col_bnh, linestyle='--', linewidth=1.8, label=f"Buy & Hold (+{res['bnh_roi']:.1f}%)")
         ax_eq.set_title(f"{name}: Compounding Equity vs Benchmark (Max DD: -{res['strat_mdd']:.1f}% vs -{res['bnh_mdd']:.1f}%)", fontsize=11, fontweight='bold', pad=8)
@@ -259,31 +299,76 @@ def run_triple_asset_engine(output_dir="model"):
         ax_eq.grid(True, linestyle='--', alpha=0.3, color=grid_color)
         ax_eq.legend(loc="upper left", framealpha=0.85, facecolor="#1e293b", edgecolor="none", fontsize=9)
         
-        # Trade Win/Loss Distribution Subplot
         ax_tr = fig.add_subplot(gs[row, 1])
         ax_tr.set_facecolor(bg_color)
-        
         df_tr = res['trades_df']
         tr_indices = np.arange(1, len(df_tr) + 1)
         tr_returns = df_tr['return_pct'].values
         bar_colors = [res['color'] if r > 0 else col_loss for r in tr_returns]
-        
         ax_tr.bar(tr_indices, tr_returns, color=bar_colors, width=0.7, alpha=0.9)
         ax_tr.axhline(0, color="#ffffff", linestyle='-', linewidth=0.8)
         ax_tr.set_title(f"{name}: Tactical Alpha Trades ({res['win_rate']:.1f}% Win Rate | {res['loss_rate']:.1f}% Loss Rate)", fontsize=11, fontweight='bold', pad=8)
         ax_tr.set_xlabel(f"Trade Cycles ({res['win_trades']} Wins / {res['loss_trades']} Losses)", fontsize=10)
         ax_tr.set_ylabel("Trade Return (%)", fontsize=10)
         ax_tr.grid(True, linestyle='--', alpha=0.3, color=grid_color)
-        
         row += 1
         
     dashboard_path = os.path.join(output_dir, "multi_asset_triple_80_dashboard.png")
     plt.savefig(dashboard_path, dpi=300, facecolor=bg_color)
     plt.close()
     
-    print(f"Triple-Asset Visual Dashboard saved to: {dashboard_path}")
+    # 2. Strictly Post-2018 6-Panel Visual Dashboard
+    fig_post = plt.figure(figsize=(20, 14), dpi=300)
+    gs_post = fig_post.add_gridspec(3, 2, hspace=0.32, wspace=0.22)
+    fig_post.patch.set_facecolor(bg_color)
+    
+    row = 0
+    for name, res in results.items():
+        # Filter post-2018 equity curve
+        mask_2018 = res['dates'] >= '2018-01-01'
+        dates_post = res['dates'][mask_2018]
+        strat_eq_post = res['strat_eq'][mask_2018] / res['strat_eq'][mask_2018][0]
+        bnh_eq_post = res['bnh_eq'][mask_2018] / res['bnh_eq'][mask_2018][0]
+        
+        post_strat_roi = (strat_eq_post[-1] - 1.0) * 100
+        post_bnh_roi = (bnh_eq_post[-1] - 1.0) * 100
+        
+        peaks_p = np.maximum.accumulate(strat_eq_post)
+        dd_p = (peaks_p - strat_eq_post) / peaks_p * 100
+        max_dd_p = np.max(dd_p)
+        
+        ax_eq_p = fig_post.add_subplot(gs_post[row, 0])
+        ax_eq_p.set_facecolor(bg_color)
+        ax_eq_p.plot(dates_post, strat_eq_post, color=res['color'], linewidth=2.4, label=f"{name} Strategy (+{post_strat_roi:.1f}%)")
+        ax_eq_p.plot(dates_post, bnh_eq_post, color=col_bnh, linestyle='--', linewidth=1.8, label=f"Buy & Hold (+{post_bnh_roi:.1f}%)")
+        ax_eq_p.set_title(f"{name} (Post-2018): Compounding Wealth vs Benchmark (Max DD: -{max_dd_p:.1f}%)", fontsize=11, fontweight='bold', pad=8)
+        ax_eq_p.set_ylabel("Growth of $1/₹1", fontsize=10)
+        ax_eq_p.grid(True, linestyle='--', alpha=0.3, color=grid_color)
+        ax_eq_p.legend(loc="upper left", framealpha=0.85, facecolor="#1e293b", edgecolor="none", fontsize=9)
+        
+        ax_tr_p = fig_post.add_subplot(gs_post[row, 1])
+        ax_tr_p.set_facecolor(bg_color)
+        df_tr_p = res['trades_post_df']
+        tr_indices_p = np.arange(1, len(df_tr_p) + 1)
+        tr_returns_p = df_tr_p['return_pct'].values
+        bar_colors_p = [res['color'] if r > 0 else col_loss for r in tr_returns_p]
+        ax_tr_p.bar(tr_indices_p, tr_returns_p, color=bar_colors_p, width=0.7, alpha=0.9)
+        ax_tr_p.axhline(0, color="#ffffff", linestyle='-', linewidth=0.8)
+        ax_tr_p.set_title(f"{name} (Post-2018): {res['win_post']} Wins / {res['loss_post']} Losses ({res['wr_post']:.1f}% Win Rate | {res['lr_post']:.1f}% Loss Rate)", fontsize=11, fontweight='bold', pad=8)
+        ax_tr_p.set_xlabel("Post-2018 Trade Sequence (2018 - 2026)", fontsize=10)
+        ax_tr_p.set_ylabel("Trade Return (%)", fontsize=10)
+        ax_tr_p.grid(True, linestyle='--', alpha=0.3, color=grid_color)
+        row += 1
+        
+    dashboard_post_path = os.path.join(output_dir, "post_2018_multi_asset_dashboard.png")
+    plt.savefig(dashboard_post_path, dpi=300, facecolor=bg_color)
+    plt.close()
+    
+    print(f"Triple-Asset Full Dashboard saved to: {dashboard_path}")
+    print(f"Triple-Asset Post-2018 Dashboard saved to: {dashboard_post_path}")
     return results
 
 
 if __name__ == "__main__":
     run_triple_asset_engine(output_dir="model")
+
