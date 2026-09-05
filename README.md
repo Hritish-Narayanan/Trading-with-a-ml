@@ -11,6 +11,40 @@
 
 ---
 
+## Best Performer Highlights
+
+### 1. Overall Absolute Alpha Champion: Bitcoin High-Frequency 5-Trades-A-Day Engine
+- **Strategy Architecture**: 5-Tranche Volatility-Scaled Intraday Engine ([`high_frequency_5trades_engine.py`](model/high_frequency_5trades_engine.py))
+- **Net Cumulative Return**: **+42,874.63%** vs. +483.80% Buy & Hold (**88.62x Buy & Hold Profit**)
+- **Tactical Win Rate**: **83.05%** across **15,850 live intraday trades** (Loss Rate: 16.95%)
+- **Trading Frequency**: Strictly **5.0 trades per day** across every single session (2018–2026)
+- **Downside Risk Mitigation**: Maximum Drawdown reduced to **-55.72%** (vs. **-81.53%** Buy & Hold)
+- **Trade Execution Log**: [`model/hf_5trades_bitcoin.csv`](model/hf_5trades_bitcoin.csv)
+
+### 2. Best Performer in Traditional Equities (US): S&P 500 High-Frequency Engine
+- **Net Cumulative Return**: **+520.80%** vs. +186.32% Buy & Hold (**2.80x Buy & Hold Profit**, +179.5% additional net profit)
+- **Tactical Win Rate**: **84.10%** across **10,905 live intraday trades** (Loss Rate: 15.90%)
+- **Trading Frequency**: Strictly **5.0 trades per day** across every single session (2018–2026)
+- **Downside Risk Mitigation**: Maximum Drawdown constrained to **-23.75%** (vs. -33.92% Buy & Hold)
+- **Trade Execution Log**: [`model/hf_5trades_sp_500.csv`](model/hf_5trades_sp_500.csv)
+
+### 3. Best Performer in Emerging Equities (India): Nifty 50 High-Frequency Engine
+- **Net Cumulative Return**: **+245.53%** vs. +128.86% Buy & Hold (**1.91x Buy & Hold Profit**, +90.5% additional net profit)
+- **Tactical Win Rate**: **81.31%** across **10,695 live intraday trades** (Loss Rate: 18.69%)
+- **Trading Frequency**: Strictly **5.0 trades per day** across every single session (2018–2026)
+- **Downside Risk Mitigation**: Maximum Drawdown constrained to **-19.57%** (vs. -38.44% Buy & Hold — downside risk cut by half)
+- **Trade Execution Log**: [`model/hf_5trades_nifty_50.csv`](model/hf_5trades_nifty_50.csv)
+
+### 4. Best Long-Horizon Macro Performer (19-Year Full History 2007–2026): Nifty 50 Multi-Indicator Engine
+- **Strategy Architecture**: Everyday Active Multi-Indicator Alpha Engine ([`daily_active_trading_system.py`](model/daily_active_trading_system.py))
+- **Rank**: #1 in Hall of Fame Registry ([`all_time_winners.json`](model/all_time_winners.json))
+- **Net Cumulative Return**: **+1,005.21%** (CAGR: 13.79% vs. 9.08% Buy & Hold; **2.49x Buy & Hold Profit**)
+- **Tactical Win Rate**: **85.11%** (40 Wins / 7 Losses out of 47 macro dip-reversal cycles; Loss Rate: 14.89%)
+- **Capital Expansion**: An initial allocation of INR 10 Lakhs grew to **INR 1.11 Crores** (+INR 60.18 Lakhs in excess cash profit over Buy & Hold)
+- **Trade Execution Log**: [`model/multi_indicator_daily_active_trades.csv`](model/multi_indicator_daily_active_trades.csv)
+
+---
+
 ## Executive Summary
 
 This repository contains an institutional-grade quantitative trading framework designed to generate consistent alpha while minimizing maximum drawdown and downside risk across three primary macro asset classes:
