@@ -1,7 +1,7 @@
 # Nifty 50 Machine Learning & Evolutionary Strategy Framework
-### ⚡ Natively Optimized for Apple Silicon M1 (Metal Performance Shaders GPU + Unified Memory)
+### Hardware Acceleration: Apple Silicon M1 (Metal Performance Shaders GPU and Unified Memory Architecture)
 
-This directory contains three quantitative systems designed for predicting, adapting to, and evolving high-alpha strategies on the Nifty 50 index:
+This directory contains quantitative systems designed for predicting, adapting to, and evolving high-alpha strategies on the Nifty 50 index, S&P 500, and Bitcoin:
 
 1. **`strategy_evolution_engine.py` (Evolutionary Strategy Synthesis & Genetic Optimization - Apple Silicon M1 Accelerated)**:
    - Continuously **synthesizes new trading strategies** by combining technical building blocks (RSI, Bollinger %B, Donchian Channels, Dip-Buying, Turn-of-Month) with regime filters and dynamic risk exits.
@@ -48,11 +48,11 @@ This directory contains three quantitative systems designed for predicting, adap
 
 ---
 
-## ⚡ Apple Silicon M1 Architecture
+## Apple Silicon M1 Architecture
 
 ```
 ========================================================================================
- ⚡ APPLE SILICON M1 HARDWARE ACCELERATION ACTIVE ⚡
+ APPLE SILICON M1 HARDWARE ACCELERATION ACTIVE
    Architecture       : Apple Silicon M1 (ARM64, NEON SIMD)
    GPU Processing Unit: Apple Silicon Metal Performance Shaders (MPS - 8 GPU Cores)
    Memory System      : Unified Memory Architecture (UMA Zero-Copy Host/GPU Bus)
@@ -68,7 +68,7 @@ This directory contains three quantitative systems designed for predicting, adap
 
 ---
 
-## 🚀 Quickstart Commands
+## Quickstart Commands
 
 ### 1. Run the Evolutionary Strategy Discovery Engine (Apple Silicon M1 Accelerated)
 ```bash
@@ -105,7 +105,7 @@ This directory contains three quantitative systems designed for predicting, adap
 
 ---
 
-## 🧬 How the Evolutionary Strategy Engine Works
+## Evolutionary Strategy Engine Architecture
 
 ```mermaid
 flowchart TD
@@ -138,7 +138,7 @@ flowchart TD
 
 ---
 
-## 📂 Output Artifacts in `model/`
+## Output Artifacts in `model/`
 
 * `all_time_winners.json`: Persistent Hall of Fame registry storing all historical champion genomes, in-sample fitness, out-of-sample win rates, and ROIs across all evolutionary runs.
 * `strategy_evolution_dashboard.png`: 4-panel visual dashboard displaying fitness progression across generations, win rate accuracy evolution, out-of-sample compounding vs Nifty 50 Buy & Hold, and gene dominance.

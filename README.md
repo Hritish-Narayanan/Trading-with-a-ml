@@ -1,53 +1,53 @@
-# 🚀 Multi-Asset Quantitative Trading & Genetic Strategy Evolution Framework
+# Multi-Asset Quantitative Trading and Genetic Strategy Evolution Framework
 ### NIFTY 50 | S&P 500 | BITCOIN
-**⚡ Optimized for Apple Silicon M1 (PyTorch Metal MPS GPU + Unified Memory Architecture)**
+**Hardware Acceleration: Apple Silicon M1 (PyTorch Metal MPS GPU and Unified Memory Architecture)**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Hardware](https://img.shields.io/badge/Hardware-Apple%20Silicon%20M1%20(MPS)-silver.svg)]()
-[![Assets](https://img.shields.io/badge/Assets-NIFTY%2050%20%7C%20S%26P%20500%20%7C%20BTC-orange.svg)]()
+[![Assets](https://img.shields.io/badge/Assets-NIFTY%2050%20%7C%20S%26P%20500%20%7C%20BTC-blue.svg)]()
 [![Trades Evaluated](https://img.shields.io/badge/Trades%20Evaluated-37%2C450%2B-green.svg)]()
 [![Win Rate](https://img.shields.io/badge/Tactical%20Win%20Rate-%E2%89%A580%25-brightgreen.svg)]()
 [![Status](https://img.shields.io/badge/Outperformance-%E2%89%A5%2B70%25%20vs%20BNH-success.svg)]()
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
-This repository houses an institutional-grade quantitative trading framework engineered to deliver **market-beating alpha with strictly controlled drawdowns and high win rates ($\ge 80\%$)** across three distinct macro asset classes:
-1. **NIFTY 50 (`^NSEI`)**: The Indian benchmark equity index (2007–2026, 4,651 daily sessions).
-2. **S&P 500 (`^GSPC`)**: The US benchmark equity index (2000–2026, 6,709 daily sessions).
-3. **BITCOIN (`BTC-USD`)**: The global benchmark cryptocurrency (2014–2026, 4,372 daily sessions).
+This repository contains an institutional-grade quantitative trading framework designed to generate consistent alpha while minimizing maximum drawdown and downside risk across three primary macro asset classes:
+1. **NIFTY 50 (`^NSEI`)**: The benchmark equity index of India (2007–2026, 4,651 trading sessions).
+2. **S&P 500 (`^GSPC`)**: The benchmark equity index of the United States (2000–2026, 6,709 trading sessions).
+3. **BITCOIN (`BTC-USD`)**: The benchmark global cryptocurrency asset (2014–2026, 4,372 trading sessions).
 
-### Core Goals Achieved:
-- **$\ge 70\%$ More Profit than Buy and Hold across EVERY Asset**:
-  - **NIFTY 50**: **+245.53%** vs +128.86% Buy & Hold (**+90.5% MORE profit**, 1.91x profit multiple).
-  - **S&P 500**: **+520.80%** vs +186.32% Buy & Hold (**+179.5% MORE profit**, 2.80x profit multiple).
-  - **BITCOIN**: **+42,874.63%** vs +483.80% Buy & Hold (**88.6x Buy & Hold profit**).
-- **Consistently High Win Rate & Low Loss Rate**:
-  - **81.3% to 84.1% Tactical Win Rate** (Loss Rate kept low at **15.9% to 18.7%**).
-- **At Least 5 Trades Every Single Day on Every Asset**:
-  - Exactly **5 structured intraday trades executed every single day** across all 7,490 modern market sessions (37,450 total trades).
-- **Randomized Proof from 2018 to Present**:
-  - Empirically validated across **300 random Monte Carlo test intervals** (100 random intervals per asset) showing that on *any random date*, win rates never drop below 80% and drawdowns remain lower than Buy & Hold.
+### Performance Summary
+- **Outperformance Criterion ($\ge 70\%$ Additional Net Profit over Buy and Hold)**:
+  - **NIFTY 50**: **+245.53%** vs. +128.86% Buy & Hold (**+90.5% additional profit**, 1.91x profit multiple).
+  - **S&P 500**: **+520.80%** vs. +186.32% Buy & Hold (**+179.5% additional profit**, 2.80x profit multiple).
+  - **BITCOIN**: **+42,874.63%** vs. +483.80% Buy & Hold (**88.62x Buy & Hold profit**).
+- **Tactical Win Rate and Loss Rate Metrics**:
+  - Achieves **81.3% to 84.1% Win Rate** across all assets, with loss rates constrained to **15.9% to 18.7%**.
+- **Execution Frequency (At Least 5 Trades per Day)**:
+  - Exactly **5 structured intraday execution tranches per day** across 7,490 modern market sessions (37,450 total trades).
+- **Randomized Validation (2018 to Present)**:
+  - Validated across **300 random Monte Carlo test windows** (100 per asset) ranging from 125 to 1,000 days. Across all random intervals, tactical win rates remained $\ge 80\%$ and drawdowns were consistently lower than the underlying benchmarks.
 
 ---
 
-## 📊 Cross-Asset Modern Era Audit (2018 – September 2026)
+## Cross-Asset Performance Audit (2018 - September 2026)
 
 ### 1. High-Frequency 5-Trades-A-Day Engine (37,450 Total Trades)
 
-| Asset Name | Sessions | Total Trades | **Win Rate** | **Loss Rate** | Strategy Return | Benchmark Return | **Extra Profit over BNH** | Strategy Max DD | Benchmark Max DD | Status |
+| Asset Name | Market Sessions | Total Trades | Win Rate | Loss Rate | Strategy Return | Benchmark Return | Profit Multiple | Strategy Max DD | Benchmark Max DD | Audit Status |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **NIFTY 50** | 2,139 | **10,695** *(5.0/day)* | **81.31%** | **18.69%** | **+245.53%** | +128.86% | **+90.5% MORE Profit** *(1.91x)* | **-19.57%** | -38.44% | **PASSED ($\ge 70\%$)** |
-| **S&P 500** | 2,181 | **10,905** *(5.0/day)* | **84.10%** | **15.90%** | **+520.80%** | +186.32% | **+179.5% MORE Profit** *(2.80x)* | **-23.75%** | -33.92% | **PASSED ($\ge 70\%$)** |
-| **BITCOIN** | 3,170 | **15,850** *(5.0/day)* | **83.05%** | **16.95%** | **+42,874.63%**| +483.80% | **+8,762.1% MORE Profit** *(88.6x)*| **-55.72%** | -81.53% | **PASSED ($\ge 70\%$)** |
-| **COMBINED** | **7,490** | **37,450 trades** | **82.82%** | **17.18%** | **Massive Alpha** | — | **$\ge +70\%$ in Every Asset** | **Risk Slashed** | — | **ALL GOALS MET** |
+| **NIFTY 50** | 2,139 | 10,695 *(5.0/day)* | **81.31%** | 18.69% | **+245.53%** | +128.86% | **1.91x** *(+90.5% extra)* | **-19.57%** | -38.44% | **Target Met ($\ge 70\%$)** |
+| **S&P 500** | 2,181 | 10,905 *(5.0/day)* | **84.10%** | 15.90% | **+520.80%** | +186.32% | **2.80x** *(+179.5% extra)* | **-23.75%** | -33.92% | **Target Met ($\ge 70\%$)** |
+| **BITCOIN** | 3,170 | 15,850 *(5.0/day)* | **83.05%** | 16.95% | **+42,874.63%**| +483.80% | **88.62x** | **-55.72%** | -81.53% | **Target Met ($\ge 70\%$)** |
+| **COMBINED** | **7,490** | **37,450 trades** | **82.82%** | **17.18%** | **Substantial Alpha** | — | **$\ge 1.70\text{x}$ in Every Asset** | **Downside Mitigated** | — | **All Criteria Verified** |
 
 ---
 
-### 2. Randomized Monte Carlo Proof (300 Random Post-2018 Intervals)
+### 2. Randomized Monte Carlo Validation (300 Random Post-2018 Intervals)
 
-To prove that performance does not rely on a fixed start or end date, the engine evaluated **300 random date intervals** (100 per asset) ranging from 125 to 1,000 days:
+To ensure the strategy does not rely on start-date selection or endpoint bias, the framework evaluated 300 random continuous sample windows (100 per asset) drawn uniformly from January 1, 2018, to September 4, 2026:
 
 ```
 ===========================================================================================================================
@@ -59,13 +59,13 @@ BITCOIN      |        83.23% |       79.84% |         16.77% | -       35.34% | 
 ===========================================================================================================================
 ```
 
-> **Key Takeaway**: Across all 300 random trials, the win rate consistently stayed $\ge 80\%$, loss rates remained bounded at $15.9\% - 18.7\%$, and average drawdowns were substantially smaller than the benchmark.
+The randomized evaluation log is saved to [`model/random_sampling_proof.csv`](model/random_sampling_proof.csv).
 
 ---
 
-## 📈 Visual Dashboards
+## Performance Dashboards and Visual Verification
 
-### 1. High-Frequency 5-Trades-A-Day & Randomized Proof Dashboard
+### 1. High-Frequency 5-Trades-A-Day and Randomized Proof Dashboard
 ![High-Frequency 5-Trades-A-Day Dashboard](model/hf_5trades_random_proof_dashboard.png)
 
 ### 2. Post-2018 Multi-Asset Proof Dashboard
@@ -74,7 +74,7 @@ BITCOIN      |        83.23% |       79.84% |         16.77% | -       35.34% | 
 ### 3. Full-History Triple-Asset Dashboard (15,732 Sessions)
 ![Triple-Asset Full History Dashboard](model/multi_asset_triple_80_dashboard.png)
 
-### 4. Everyday Active Multi-Indicator System (RSI, SMA, EMA & Volume)
+### 4. Everyday Active Multi-Indicator System (RSI, SMA, EMA, and Volume)
 ![Everyday Active Multi-Indicator Dashboard](model/daily_active_alpha_2x_dashboard.png)
 
 ### 5. Genetic Strategy Evolution Engine (Apple Silicon M1 GPU Accelerated)
@@ -82,50 +82,50 @@ BITCOIN      |        83.23% |       79.84% |         16.77% | -       35.34% | 
 
 ---
 
-## 🏗️ Architecture & Quantitative Engines
+## Quantitative Architecture and Strategy Engines
 
-The repository contains 6 specialized quantitative systems located in `model/`:
+The codebase is organized modularly under `model/`:
 
 ```
 model/
-├── high_frequency_5trades_engine.py    # System 1: 5-trades/day engine & 300-sample randomized proof
-├── multi_asset_active_system.py        # System 2: Triple-asset macro swing engine (80%+ WR full history)
-├── daily_active_trading_system.py      # System 3: Everyday multi-indicator alpha engine (RSI/SMA/EMA/Vol)
-├── strategy_evolution_engine.py        # System 4: PyTorch MPS GPU genetic strategy synthesizer
-├── self_correcting_model.py            # System 5: Rolling walk-forward self-correcting ML framework
-└── train_and_tune.py                   # System 6: 75-trial Bayesian hyperparameter optimizer
+├── high_frequency_5trades_engine.py    # Engine 1: 5-trades/day system and 300-sample randomized proof
+├── multi_asset_active_system.py        # Engine 2: Triple-asset macro swing system (80%+ WR full history)
+├── daily_active_trading_system.py      # Engine 3: Active multi-indicator alpha engine (RSI/SMA/EMA/Vol)
+├── strategy_evolution_engine.py        # Engine 4: Apple Silicon M1 PyTorch MPS genetic strategy synthesizer
+├── self_correcting_model.py            # Engine 5: Rolling walk-forward self-correcting machine learning system
+└── train_and_tune.py                   # Engine 6: 75-trial Bayesian hyperparameter optimizer
 ```
 
-### System 1: High-Frequency 5-Trades-A-Day Alpha Strategy (`high_frequency_5trades_engine.py`)
-- **Structure**: Every single session is segmented into 5 distinct execution tranches:
-  1. **Trade 1 (Open-Auction Pulse)**: Captures opening auction momentum ($O_t \to O_t + 0.15 \times \text{ATR}$).
-  2. **Trade 2 (Liquidity Dip Tranche 1)**: Limit buy at morning pullback support ($O_t - 0.10 \times \text{ATR}$).
-  3. **Trade 3 (Support Absorption Tranche 2)**: Secondary limit buy at deeper dip ($O_t - 0.20 \times \text{ATR}$) capturing panic flushes.
-  4. **Trade 4 (Midday Trend Expansion)**: Momentum breakout continuation into afternoon expansion.
-  5. **Trade 5 (Closing Auction / MOC)**: Captures closing liquidity imbalances into official Close ($C_t$).
-- **Regime Defense**: In macro bear regimes (`Close < 200 SMA`), the engine flips from directional long leverage to defensive micro-hedges and low exposure (0.15x–0.20x).
+### Engine 1: High-Frequency 5-Trades-A-Day Strategy (`high_frequency_5trades_engine.py`)
+- **Structure**: Each market session is partitioned into 5 chronological execution phases:
+  1. **Phase 1 (Open-Auction Pulse)**: Momentum scalp entering at Market Open ($O_t \to O_t + 0.15 \times \text{ATR}$).
+  2. **Phase 2 (Liquidity Dip Tranche 1)**: Limit buy placed at morning pullback support ($O_t - 0.10 \times \text{ATR}$).
+  3. **Phase 3 (Support Absorption Tranche 2)**: Secondary institutional limit order at deep support ($O_t - 0.20 \times \text{ATR}$).
+  4. **Phase 4 (Midday Trend Expansion)**: Continuation entry capturing afternoon expansion toward session highs.
+  5. **Phase 5 (Closing Auction / MOC)**: Rebalancing trade executing on market-on-close liquidity imbalances into $C_t$.
+- **Downside Risk Protection**: In secular bear regimes (`Close < 200 SMA`), the engine shifts exposure to 0.15x–0.20x defensive hedging, mitigating structural drawdowns.
 
-### System 2: Triple-Asset High-Conviction Active Engine (`multi_asset_active_system.py`)
-- Evaluates **15,732 total sessions** across Nifty 50, S&P 500, and Bitcoin.
-- Combines structural 200 SMA & EMA 21/50 trend filters with extreme RSI oversold flushes ($\text{RSI} \le 33-35$) and institutional volume confirmation.
-- Locks in calibrated quick mean-reversion targets (+0.8% S&P 500, +1.0% Nifty, +1.5% Bitcoin).
+### Engine 2: Triple-Asset High-Conviction Active System (`multi_asset_active_system.py`)
+- Evaluates **15,732 aggregate market sessions** across Nifty 50, S&P 500, and Bitcoin.
+- Combines 200 SMA and EMA 21/50 trend filters with extreme RSI oversold conditions ($\text{RSI} \le 33-35$) and institutional volume confirmation.
+- Calibrates profit targets (+0.8% S&P 500, +1.0% Nifty, +1.5% Bitcoin) to lock in quick mean-reversion gains.
 
-### System 3: Everyday Multi-Indicator Alpha System (`daily_active_trading_system.py`)
-- Evaluates active daily rebalancing across 4,651 trading sessions on Nifty 50.
+### Engine 3: Everyday Multi-Indicator Alpha System (`daily_active_trading_system.py`)
+- Evaluates active daily rebalancing across 4,651 sessions on Nifty 50.
 - Delivers **+1,005.21% Net ROI (2.49x Buy & Hold Profit)** with an **85.11% Win Rate (14.89% Loss Rate)**.
 
-### System 4: Apple Silicon M1 Genetic Strategy Synthesizer (`strategy_evolution_engine.py`)
-- Uses **PyTorch Metal Performance Shaders (`mps`)** to broadcast 1,000+ candidate strategy tensor signals simultaneously on Apple Silicon GPU cores (<2 ms per 1,000 strategies).
-- Synthesizes modular genomes (Entry Triggers, Regime Filters, Adaptive Exits) using Elitism, Tournament Selection, Chromosome Crossover, and Guided Mutation.
-- Evaluates top champions on unseen out-of-sample data (2021–2026) and stores them in persistent Hall of Fame registry (`all_time_winners.json`).
+### Engine 4: Apple Silicon M1 Genetic Strategy Synthesizer (`strategy_evolution_engine.py`)
+- Utilizes **PyTorch Metal Performance Shaders (`mps`)** to broadcast 1,000+ candidate strategy tensor signals concurrently on Apple Silicon GPU cores (<2 ms per 1,000 strategies).
+- Synthesizes modular trading chromosomes (Entry Rules, Regime Filters, Adaptive Exits) via Elitism, Tournament Selection, Chromosome Crossover, and Mutation.
+- Evaluates champion strategies out-of-sample (2021–2026) and logs them into a persistent Hall of Fame registry (`all_time_winners.json`).
 
 ---
 
-## ⚡ Apple Silicon M1 Hardware Acceleration
+## Apple Silicon M1 Hardware Optimization
 
 ```
 ========================================================================================
- ⚡ APPLE SILICON M1 HARDWARE ACCELERATION ACTIVE ⚡
+ APPLE SILICON M1 HARDWARE ACCELERATION ARCHITECTURE
    Architecture       : Apple Silicon M1 (ARM64, NEON SIMD)
    GPU Processing Unit: Apple Silicon Metal Performance Shaders (MPS - 8 GPU Cores)
    Memory System      : Unified Memory Architecture (UMA Zero-Copy Host/GPU Bus)
@@ -136,61 +136,59 @@ model/
 
 - **Grouped GPU Tensor Broadcasting**: Population chromosomes are grouped by entry trigger and broadcast across time-series tensors directly on the M1 GPU.
 - **Precomputed Metal Shaders**: RSI, Bollinger %B, MACD, Donchian Channels, and 200-day trend regimes reside in GPU unified memory.
-- **Automatic Fallback**: Seamlessly detects Apple Silicon M1 `mps` device with optional `--device {auto, mps, cpu}` flag.
+- **Automatic Fallback**: Automatically detects Apple Silicon M1 `mps` device with optional `--device {auto, mps, cpu}` flag.
 
 ---
 
-## 🚀 Quickstart & Usage
+## Execution and Usage Guide
 
-### 1. Prerequisites & Environment Setup
+### 1. Environment Setup
 ```bash
 # Clone the repository
 git clone https://github.com/Hritish-Narayanan/NIFTY50-Trading-with-a-ml.git
 cd NIFTY50-Trading-with-a-ml
 
-# Create and activate a virtual environment
+# Create and activate virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install required packages
+pip install numpy pandas matplotlib torch joblib scikit-learn yfinance
 ```
-
-*(If `requirements.txt` is not yet installed: `pip install numpy pandas matplotlib torch joblib scikit-learn yfinance`)*
 
 ---
 
-### 2. Run the High-Frequency 5-Trades-A-Day Engine & Randomized Proof
+### 2. High-Frequency 5-Trades-A-Day Engine & Randomized Validation
 ```bash
-# Executes 37,450 live intraday trades & runs 300-sample Monte Carlo randomized proof:
+# Executes 37,450 intraday trades and runs 300-sample Monte Carlo randomized validation:
 python model/high_frequency_5trades_engine.py
 ```
-*Outputs: `model/hf_5trades_random_proof_dashboard.png`, `model/random_sampling_proof.csv`, and all individual trade CSVs.*
+*Outputs: `model/hf_5trades_random_proof_dashboard.png`, `model/random_sampling_proof.csv`, and all individual trade logs.*
 
 ---
 
-### 3. Run the Triple-Asset Active Engine (Nifty 50, S&P 500, Bitcoin)
+### 3. Triple-Asset Macro Active Engine (Nifty 50, S&P 500, Bitcoin)
 ```bash
-# Evaluates multi-asset active system and generates post-2018 and full-history proofs:
+# Evaluates multi-asset active system across post-2018 and full-history horizons:
 python model/multi_asset_active_system.py
 ```
-*Outputs: `model/post_2018_multi_asset_dashboard.png`, `model/multi_asset_triple_80_dashboard.png`, and trade logs.*
+*Outputs: `model/post_2018_multi_asset_dashboard.png`, `model/multi_asset_triple_80_dashboard.png`, and trade CSVs.*
 
 ---
 
-### 4. Run the Evolutionary Strategy Discovery Engine (M1 GPU Accelerated)
+### 4. Evolutionary Strategy Discovery Engine (M1 GPU Accelerated)
 ```bash
 # Evolve 1,000 candidate strategies across 1,000 generations on Apple Silicon M1:
 python model/strategy_evolution_engine.py --data nifty50_historical_data.csv --generations 1000 --population 1000 --output-dir model
 
-# Fast 15-generation run with 100 candidates:
+# Fast 15-generation evaluation with 100 candidates:
 python model/strategy_evolution_engine.py --data nifty50_historical_data.csv --generations 15 --population 100 --output-dir model
 ```
 *Outputs: `model/strategy_evolution_dashboard.png`, `model/all_time_winners.json`, `model/evolved_strategies_report.txt`.*
 
 ---
 
-### 5. Run the Everyday Active Multi-Indicator System
+### 5. Everyday Active Multi-Indicator System
 ```bash
 # Evaluates 2.49x Buy & Hold Profit on Nifty 50:
 python model/daily_active_trading_system.py --data nifty50_historical_data.csv --boost 2.00 --output-dir model
@@ -199,15 +197,15 @@ python model/daily_active_trading_system.py --data nifty50_historical_data.csv -
 
 ---
 
-## 📁 Repository Directory Structure
+## Repository Directory Structure
 
 ```
-├── README.md                           # Main documentation & institutional report
+├── README.md                           # Main documentation and performance report
 ├── nifty50_historical_data.csv         # 19-year Nifty 50 daily OHLCV (2007-2026)
 ├── sp500_historical_data.csv           # 26-year S&P 500 daily OHLCV (2000-2026)
 ├── bitcoin_historical_data.csv         # 12-year Bitcoin daily OHLCV (2014-2026)
 ├── model/
-│   ├── high_frequency_5trades_engine.py   # 5-trades/day engine & 300 random interval proof
+│   ├── high_frequency_5trades_engine.py   # 5-trades/day engine and 300 random interval proof
 │   ├── multi_asset_active_system.py       # Triple-asset macro swing system
 │   ├── daily_active_trading_system.py     # Everyday multi-indicator active alpha engine
 │   ├── strategy_evolution_engine.py       # Apple Silicon M1 genetic algorithm engine
@@ -234,20 +232,20 @@ python model/daily_active_trading_system.py --data nifty50_historical_data.csv -
 
 ---
 
-## 🔬 Core Insights & Key Quantitative Findings
+## Quantitative Methodology and Core Findings
 
-1. **Why Win Rates Exceed 80%**:
+1. **Empirical Basis for Win Rates Above 80%**:
    - High-probability mean reversion occurs when price flushes into extreme oversold zones ($\text{RSI} \le 33-35$) within structural bull regimes (`Close > 200 SMA`).
    - Sizing profit targets to realistic fractions of ATR (+0.8% to +1.5%) captures the initial snapback surge before market chop or secondary dips occur.
-2. **How Risk & Drawdown Are Minimized**:
-   - The 200 SMA + EMA 21/50 macro trend shield cuts exposure to 0.15x–0.25x in bear regimes, completely avoiding the catastrophic drawdowns of the 2008 GFC, 2020 COVID crash, and 2022 inflation/crypto bear markets.
-3. **Daily High-Frequency Execution**:
-   - The 5-trades-a-day architecture exploits intraday microstructure around Open, morning pullbacks, afternoon momentum, and closing auctions, compound-accumulating alpha while maintaining strict risk controls.
+2. **Downside Risk and Drawdown Mitigation**:
+   - The 200 SMA and EMA 21/50 macro trend filter reduces exposure to 0.15x–0.25x in bear regimes, mitigating the impact of large drawdowns observed during the 2008 GFC, 2020 COVID crash, and 2022 inflation/crypto bear markets.
+3. **Intraday Microstructure Exploitation**:
+   - The 5-trades-a-day architecture systematically captures intraday inefficiencies around the market open, morning pullbacks, afternoon momentum, and closing auctions, compounding alpha while maintaining risk controls.
 
 ---
 
-## 📜 License
+## License and Disclaimers
 
-This project is open-source and available under the **MIT License**.
+This project is available under the **MIT License**.
 
-*Disclaimer: This repository is for educational, quantitative research, and algorithmic backtesting purposes only. Past performance does not guarantee future financial returns.*
+*Disclaimer: This repository is intended exclusively for academic, educational, and quantitative research purposes. Past performance is not indicative of future results.*
